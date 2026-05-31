@@ -21,11 +21,24 @@ This distinction produces the three-state EAR classification.
 
 ## Key Terms
 
-**EAR — Execution Authorization Receipt.** The receipt that a governance
+**EAR — Execution-Authority Receipt Contract.** The receipt that a governance
 mechanism produces (or fails to produce) when an operation executes. The
 three EAR states — ACTIVE, CRYSTALLIZED, ABSENT — classify whether that
 receipt is constitutive of the operation completing, parallel to it, or
 nonexistent.
+
+**ACTIVE / CRYSTALLIZED / ABSENT — naming rationale.** ACTIVE means the
+receipt mechanism is live and load-bearing: governance is acting on the
+operation constitutively. CRYSTALLIZED is a deliberate metaphor: the
+governance specification exists and is formally named, the infrastructure
+is present or specified, but it has set into a fixed form without yet being
+mandatory — fully structured, internally coherent, but not yet constitutive.
+ABSENT means no receipt surface exists for this operation family. The
+progression ABSENT → CRYSTALLIZED → ACTIVE describes the governance
+maturation path. CRYSTALLIZED is not a failure state; it is the correct
+description of most well-governed production systems, where governance
+infrastructure exists and is evaluated but does not block the operation on
+failure.
 
 **GCG — Governance Coverage Gap.** The gap between the governance layers
 declared as applicable to an operation (N) and the layers that actually

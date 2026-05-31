@@ -14,7 +14,7 @@ what qualifies as a new constitutional concept.
 
 ### 1. `ear_adapter.py`
 
-The EAR (Execution Authorization Receipt) adapter is the formal model of the system's governance architecture.
+The EAR (Execution-Authority Receipt Contract) adapter is the formal model of the system's governance architecture.
 It must implement the following interface:
 
 ```python

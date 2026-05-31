@@ -83,7 +83,7 @@ The operation completes and leaves no structured record.
 *Default Elasticsearch: no authentication, no audit log. Any
 network-reachable client has full access.*
 
-EAR (Execution Authorization Receipt) state is per operation family, not per
+EAR (Execution-Authority Receipt Contract) state is per operation family, not per
 system. Vault is ACTIVE for `secret_read` and ABSENT for
 `root_token_operation`. Both are true.
 
