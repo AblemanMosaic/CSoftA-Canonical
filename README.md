@@ -27,7 +27,7 @@ fingerprint.
 ## Verify it
 
 ```bash
-git clone https://github.com/ableman-constitutional-systems/csofta
+git clone [https://github.com/ableman-constitutional-systems/csofta](https://github.com/AblemanMosaic/CSoftA-Canonical)
 cd csofta
 python governed_pytest.py
 ```
