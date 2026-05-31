@@ -11,20 +11,16 @@ jobs:
   governed-pytest:
     name: governed_pytest.py (authoritative — 722 tests, 80 fingerprints)
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v6
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-
       - name: Run governed_pytest.py
         run: python governed_pytest.py
-
       - name: Upload receipt
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: csofta-receipt-${{ github.sha }}
@@ -34,20 +30,15 @@ jobs:
   pytest-discovery:
     name: pytest (discovery check — 720 from root)
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v6
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-
       - name: Install pytest
         run: pip install pytest
-
       - name: Run pytest from root
         run: pytest
-
       - name: Run npm suite in isolation (full 11 tests)
         run: pytest npm-constitutional-analysis/
