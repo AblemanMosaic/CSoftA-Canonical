@@ -19,6 +19,9 @@ jobs:
           python-version: "3.11"
       - name: Run governed_pytest.py
         run: python governed_pytest.py
+      - name: List receipts
+        if: always()
+        run: ls -la .csofta_receipts/ || echo "directory not found"
       - name: Upload receipt
         uses: actions/upload-artifact@v6
         if: always()
