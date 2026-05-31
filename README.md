@@ -27,7 +27,7 @@ fingerprint.
 ## Verify it
 
 ```bash
-git clone https://github.com/AblemanMosaic/CSoftA-Canonical
+git clone https://github.com/ableman-constitutional-systems/csofta
 cd csofta
 python governed_pytest.py
 ```
@@ -83,8 +83,9 @@ The operation completes and leaves no structured record.
 *Default Elasticsearch: no authentication, no audit log. Any
 network-reachable client has full access.*
 
-EAR state is per operation family, not per system. Vault is ACTIVE for
-`secret_read` and ABSENT for `root_token_operation`. Both are true.
+EAR (Execution Authorization Receipt) state is per operation family, not per
+system. Vault is ACTIVE for `secret_read` and ABSENT for
+`root_token_operation`. Both are true.
 
 `†` marks systems where ACTIVE requires a commercial license.
 See [CONCEPTS.md](CONCEPTS.md#commercial-governance-paywalling-t1784).
@@ -98,7 +99,7 @@ vault-constitutional-analysis/
 ├── impl/
 │   ├── ear_adapter_vault.py   # Formal model: operation families, governance
 │   │                          # layers, EAR state logic, N-determination
-│   ├── gcg_analyzer.py        # GCG analysis engine (shared across systems)
+│   ├── gcg_analyzer.py        # GCG (Governance Coverage Gap) analysis engine
 │   ├── gap_assertions.py      # Assertion serialization and fingerprinting
 │   └── tests/
 │       └── test_gate_suite.py # 9 gate tests per T1576 standard
@@ -152,7 +153,8 @@ A sample across the classification space. Full index of all 80 systems in
 
 The classification methodology — what ACTIVE means, how N(O) is determined,
 what gap forms exist, how convergence fingerprints are derived — is in
-[METHODOLOGY.md](METHODOLOGY.md).
+[METHODOLOGY.md](METHODOLOGY.md). A glossary of key terms (EAR, GCG, N(O),
+operation family, convergence fingerprint) is at the top of that document.
 
 The 17 named constitutional concepts that emerged from the corpus are in
 [CONCEPTS.md](CONCEPTS.md). These include things like kernel-time

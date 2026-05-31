@@ -19,6 +19,48 @@ This distinction produces the three-state EAR classification.
 
 ---
 
+## Key Terms
+
+**EAR — Execution Authorization Receipt.** The receipt that a governance
+mechanism produces (or fails to produce) when an operation executes. The
+three EAR states — ACTIVE, CRYSTALLIZED, ABSENT — classify whether that
+receipt is constitutive of the operation completing, parallel to it, or
+nonexistent.
+
+**GCG — Governance Coverage Gap.** The gap between the governance layers
+declared as applicable to an operation (N) and the layers that actually
+participated in a specific execution (k). GCG = N − k. A gap of zero means
+full coverage; a gap greater than zero means one or more declared layers did
+not participate and left no record of their non-participation.
+
+**N(O) — Declared governance layer set.** The set of governance layers that
+*should* participate in governing operations of family O, according to the
+system's architecture, documentation, and configuration. Determining N(O)
+is called N-determination; it is the analyst's primary claim about what
+governance the system is supposed to provide.
+
+**k(O, e) — Realized governance layer set.** The set of governance layers
+that *actually participated* in a specific execution instance e of operation
+family O. The GCG for that execution is N(O) − k(O, e).
+
+**Operation family.** A named class of operations that share a governance
+surface. A single system has multiple operation families, each assessed
+separately. Vault has `secret_read`, `auth_login`, `root_token_operation`,
+and others — each with its own EAR state and gap profile.
+
+**Convergence fingerprint.** A content-addressed hash of an analysis's
+structural properties: EAR states, N(O) per family, gap forms, gap
+distribution. Deterministic across runs. Two independent implementations
+that reach the same classifications produce the same fingerprint.
+
+**Gap forms.** The three structural forms a GCG can take: Layer
+Non-Activation (the layer exists but did not activate for this execution),
+Layer Absence (the layer does not exist for this operation family), and
+Layer Bypass (the layer exists and is active but this execution routed
+around it).
+
+---
+
 ## EAR States
 
 **ACTIVE** — the receipt is constitutive of operation completion. The governance
@@ -86,7 +128,7 @@ system's architecture and documentation.
 **k(O, e)** is the realized set for a specific execution instance e — the layers
 that *actually participated* in governing that operation when it ran.
 
-The **Governance Completeness Gap (GCG)** is N(O) − k(O, e): the layers that
+The **Governance Coverage Gap (GCG)** is N(O) − k(O, e): the layers that
 were declared but did not participate.
 
 Each EAR adapter declares N(O) in its `GovernanceDeclaration` with one of three
