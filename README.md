@@ -24,6 +24,19 @@ fingerprint.
 
 ---
 
+## Closing the Gap
+
+**[CLOSING_THE_GAP.md](CLOSING_THE_GAP.md)** — For security teams,
+platform engineers, and software maintainers: exactly where each analyzed
+system falls short of full governance, what form the gap takes, and what
+closes it. Covers 15 systems in this release including Vault, Kubernetes,
+PostgreSQL, MongoDB, MySQL, OPA, GitHub Actions, Kafka, Elasticsearch,
+CloudTrail, Active Directory, Docker, npm, Entra ID, and Jenkins.
+
+Three gap forms, one document, no ambiguity about what needs to change.
+
+---
+
 ## Verify it
 
 ```bash
@@ -177,6 +190,28 @@ convergence fingerprint, add it to `KNOWN_FINGERPRINTS`, and confirm
 80+1 systems pass. Full specification in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
+
+## The paper
+
+The methodology is described in full in [PAPER.md](PAPER.md):
+
+> Mazurk, A. A. *Constitutional Software Analysis (CSoftA): A
+> Governance-Based Classification Method for Software Systems.* 2026.
+> https://doi.org/10.5281/zenodo.20472195
+
+## Cite this work
+
+```bibtex
+@article{mazurk2026csofta,
+  title   = {Constitutional Software Analysis (CSoftA): A Governance-Based
+             Classification Method for Software Systems},
+  author  = {Mazurk, Adam Ableman},
+  year    = {2026},
+  doi     = {10.5281/zenodo.20472195},
+  url     = {https://doi.org/10.5281/zenodo.20472195},
+  publisher = {Zenodo}
+}
+```
 
 ## About
 
