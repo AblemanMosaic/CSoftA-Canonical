@@ -28,6 +28,7 @@ jobs:
         with:
           name: csofta-receipt-${{ github.sha }}
           path: .csofta_receipts/
+          include-hidden-files: true
           retention-days: 90
 
   pytest-discovery:
